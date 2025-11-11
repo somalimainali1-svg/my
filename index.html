@@ -1,0 +1,252 @@
+<?php
+$sent = isset($_GET['sent']) ? $_GET['sent'] : '';
+$type = isset($_GET['type']) ? $_GET['type'] : '';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Somali Mainali - Portfolio & Mental Health Advocate</title>
+  <style>
+    /* Basic Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', system-ui, Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* Header Navigation */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background-color: #0f1b2a;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 28px 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .brand { font-weight: bold; font-size: 1.2rem; }
+    nav a {
+      margin-left: 16px;
+      color: #e8e8e8;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #4ca1af; }
+
+    /* Slider */
+    .slider { position: relative; height: 420px; overflow: hidden; background: #ccc; }
+    .slide { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; text-align: center; color: #fff; padding: 20px; }
+    .slide.active { display: flex; }
+    .slide .content { max-width: 720px; background: rgba(0,0,0,0.35); padding: 20px; border-radius: 12px; }
+    .slide1 { background: linear-gradient(135deg, #2c3e50, #4ca1af); }
+    .slide2 { background: linear-gradient(135deg, #6a11cb, #2575fc); }
+    .slide3 { background: linear-gradient(135deg, #0f9b0f, #2dca9b); }
+    .slide h2 { margin-bottom: 8px; font-size: 2.2rem; }
+
+    /* Section Base */
+    section { width: min(1100px, 90%); margin: 60px auto; }
+    h2.section-title { text-align: center; font-size: 2rem; margin-bottom: 24px; color: #0e2a47; }
+
+    /* About */
+    .about { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; }
+    .about img {
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .about-text { flex: 1; font-size: 1rem; line-height: 1.7; }
+    .about-text p { margin-bottom: 0.8rem; }
+    .tagline { color: #555; font-style: italic; }
+
+    /* Skills */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .skill-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .skill-card:hover { transform: translateY(-5px); }
+    .skill-card i {
+      font-size: 2.5rem;
+      color: #4ca1af;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .skill-card h3 { margin-bottom: 0.5rem; color: #1c3a78; }
+
+    /* Contact */
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .contact-info, .contact-form { flex: 1; min-width: 300px; }
+    .contact-item { display: flex; align-items: center; margin-bottom: 1rem; }
+    .contact-item i { font-size: 1.5rem; color: #4ca1af; margin-right: 1rem; }
+    .contact-form form { display: grid; gap: 1rem; }
+    label { font-weight: 600; }
+    input, textarea {
+      width: 100%; padding: 12px;
+      border: 1px solid #ccc; border-radius: 6px;
+      font-size: 1rem;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .btn {
+      background: #1e88e5; color: #fff; border: none;
+      padding: 12px 18px; border-radius: 6px;
+      cursor: pointer; transition: background 0.3s;
+    }
+    .btn:hover { background: #1565c0; }
+
+    /* Footer */
+    footer {
+      background: #0f1b2a;
+      color: #ddd;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about { flex-direction: column; text-align: center; }
+      .skills-container { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">Somali Mainali</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Slider -->
+  <main id="home" class="slider">
+    <div class="slide slide1 active">
+      <div class="content">
+        <h2>You matter. I’m Somali Mainali, a mental health advocate.</h2>
+        <p>Providing compassionate support and mental health awareness to help communities thrive.</p>
+      </div>
+    </div>
+    <div class="slide slide2">
+      <div class="content">
+        <h2>Reducing stigma. Building resilience.</h2>
+        <p>Empathy and education for emotional well-being across all communities.</p>
+      </div>
+    </div>
+    <div class="slide slide3">
+      <div class="content">
+        <h2>Together we can navigate challenges with hope.</h2>
+        <p>Guiding people toward healing and empowerment through shared understanding.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- About -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about">
+      <img src="https://jigyasalabs.com/storage/media/8lvX5gFu0G1vDLRDGpH02pjOZPiPUDtFe9mZkMDw.jpg" alt="Somali Mainali" />
+      <div class="about-text">
+        <p class="tagline">I am dedicated to promoting mental health awareness, emotional well-being, and inclusive support for all.</p>
+        <p><strong>Name:</strong> Somali Mainali</p>
+        <p><strong>Phone:</strong> 9876543210</p>
+        <p><strong>Address:</strong> Kankai - 8, Jhapa, Nepal</p>
+        <p>As a passionate counselor and mental health advocate, I help individuals overcome challenges with empathy, awareness, and action.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2 class="section-title">My Skills</h2>
+    <div class="skills-container">
+      <div class="skill-card">
+        <i>🧠</i>
+        <h3>Counseling & Support</h3>
+        <p>Emotional guidance, stress management, and resilience-building.</p>
+      </div>
+      <div class="skill-card">
+        <i>🎤</i>
+        <h3>Public Speaking</h3>
+        <p>Workshops and seminars to raise mental health awareness.</p>
+      </div>
+      <div class="skill-card">
+        <i>🤝</i>
+        <h3>Crisis Intervention</h3>
+        <p>Providing timely and empathetic crisis support for individuals in need.</p>
+      </div>
+      <div class="skill-card">
+        <i>📚</i>
+        <h3>Education & Training</h3>
+        <p>Developing programs for youth and community mental well-being.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="contact-item"><i>📧</i> <span>samali.mainai@gmail.com</span></div>
+        <div class="contact-item"><i>📱</i> <span>9876543210</span></div>
+        <div class="contact-item"><i>📍</i> <span>Kankai - 8, Jhapa, Nepal</span></div>
+      </div>
+      <div class="contact-form">
+        <form action="mail.php" method="post">
+          <input type="hidden" name="action" value="contact" />
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name" />
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Write your message..."></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <?php echo date('Y'); ?> 2025 Somali Mainali. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Slider auto change
+    (function() {
+      const slides = document.querySelectorAll('.slide');
+      let i = 0;
+      setInterval(() => {
+        slides[i].classList.remove('active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('active');
+      }, 5000);
+    })();
+  </script>
+</body>
+</html>
