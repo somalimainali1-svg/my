@@ -1,7 +1,3 @@
-<?php
-$sent = isset($_GET['sent']) ? $_GET['sent'] : '';
-$type = isset($_GET['type']) ? $_GET['type'] : '';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -218,7 +214,7 @@ $type = isset($_GET['type']) ? $_GET['type'] : '';
         <div class="contact-item"><i>📍</i> <span>Kankai - 8, Jhapa, Nepal</span></div>
       </div>
       <div class="contact-form">
-        <form action="mail.php" method="post">
+        <form action="#" method="post">
           <input type="hidden" name="action" value="contact" />
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required placeholder="Your name" />
@@ -233,7 +229,7 @@ $type = isset($_GET['type']) ? $_GET['type'] : '';
   </section>
 
   <footer>
-    <p>© <?php echo date('Y'); ?> 2025 Somali Mainali. All rights reserved.</p>
+    <p>© 2025 Somali Mainali. All rights reserved.</p>
   </footer>
 
   <script>
