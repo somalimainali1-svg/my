@@ -62,6 +62,32 @@
     .about-text p { margin-bottom: 0.8rem; }
     .tagline { color: #555; font-style: italic; }
 
+    /* Colorful Boxes Section */
+    .boxes-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .box {
+      flex: 1 1 230px;
+      padding: 2rem;
+      border-radius: 16px;
+      color: #333;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .box h3 {
+      margin-bottom: 0.7rem;
+      font-size: 1.3rem;
+    }
+    .box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
     /* Skills */
     .skills-container {
       display: flex;
@@ -125,6 +151,7 @@
     @media (max-width: 768px) {
       .about { flex-direction: column; text-align: center; }
       .skills-container { gap: 1rem; }
+      .boxes-container { gap: 1rem; }
     }
   </style>
 </head>
@@ -135,6 +162,7 @@
     <nav>
       <a href="#home">Home</a>
       <a href="#about">About</a>
+      <a href="#inspiration">Inspiration</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -177,6 +205,29 @@
     </div>
   </section>
 
+  <!-- Colorful Boxes Section -->
+  <section id="inspiration">
+    <h2 class="section-title">Inspiration & Advocacy</h2>
+    <div class="boxes-container">
+      <div class="box" style="background: linear-gradient(135deg, #ff9a9e, #fad0c4);">
+        <h3>💖 Self-Love</h3>
+        <p>Embrace yourself with kindness. Healing starts with compassion for your own heart.</p>
+      </div>
+      <div class="box" style="background: linear-gradient(135deg, #a1c4fd, #c2e9fb);">
+        <h3>🌈 Hope</h3>
+        <p>Even in darkness, hope is the light that leads you toward better days.</p>
+      </div>
+      <div class="box" style="background: linear-gradient(135deg, #fbc2eb, #a6c1ee);">
+        <h3>🕊️ Peace</h3>
+        <p>Find calm in the chaos. Mental clarity blooms through mindfulness and balance.</p>
+      </div>
+      <div class="box" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);">
+        <h3>🌻 Growth</h3>
+        <p>Every challenge is a seed of growth. Nourish it with patience and positivity.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Skills -->
   <section id="skills">
     <h2 class="section-title">My Skills</h2>
@@ -214,8 +265,7 @@
         <div class="contact-item"><i>📍</i> <span>Kankai - 8, Jhapa, Nepal</span></div>
       </div>
       <div class="contact-form">
-        <form action="#" method="post">
-          <input type="hidden" name="action" value="contact" />
+        <form>
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required placeholder="Your name" />
           <label for="email">Email</label>
