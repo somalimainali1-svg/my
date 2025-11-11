@@ -3,66 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Somali Mainali - Portfolio & Mental Health Advocate</title>
+  <title>Somali Mainali - Mental Health Advocate & Lecturer</title>
   <style>
-    /* Basic Reset */
+    /* Reset & Base */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Poppins', system-ui, Arial, sans-serif;
-      background-color: #f7f7f7;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.7;
+      scroll-behavior: smooth;
     }
 
     a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
+    img { max-width: 100%; display: block; border-radius: 50%; }
 
-    /* Header Navigation */
+    /* Header */
     header {
       position: sticky; top: 0; z-index: 100;
-      background-color: #0f1b2a;
+      background: linear-gradient(90deg, #0f1b2a, #1c3a78);
       color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 28px 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
-    .brand { font-weight: bold; font-size: 1.2rem; }
+    .brand { font-weight: 600; font-size: 1.3rem; }
     nav a {
-      margin-left: 16px;
-      color: #e8e8e8;
+      margin-left: 18px; color: #ddd;
       transition: color 0.3s;
     }
     nav a:hover { color: #4ca1af; }
 
     /* Slider */
-    .slider { position: relative; height: 420px; overflow: hidden; background: #ccc; }
+    .slider { position: relative; height: 420px; overflow: hidden; }
     .slide { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; text-align: center; color: #fff; padding: 20px; }
     .slide.active { display: flex; }
-    .slide .content { max-width: 720px; background: rgba(0,0,0,0.35); padding: 20px; border-radius: 12px; }
+    .slide .content { max-width: 720px; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 12px; }
     .slide1 { background: linear-gradient(135deg, #2c3e50, #4ca1af); }
     .slide2 { background: linear-gradient(135deg, #6a11cb, #2575fc); }
     .slide3 { background: linear-gradient(135deg, #0f9b0f, #2dca9b); }
     .slide h2 { margin-bottom: 8px; font-size: 2.2rem; }
 
-    /* Section Base */
-    section { width: min(1100px, 90%); margin: 60px auto; }
-    h2.section-title { text-align: center; font-size: 2rem; margin-bottom: 24px; color: #0e2a47; }
+    /* Section General */
+    section {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+      padding: 60px 0;
+      border-radius: 16px;
+    }
+    h2.section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 24px;
+      color: #0e2a47;
+    }
 
-    /* About */
+    /* About Section */
+    #about {
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
     .about { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; }
     .about img {
-      width: 300px; height: 300px;
+      width: 280px; height: 280px;
       border-radius: 50%;
       object-fit: cover;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
-    .about-text { flex: 1; font-size: 1rem; line-height: 1.7; }
+    .about-text { flex: 1; }
     .about-text p { margin-bottom: 0.8rem; }
-    .tagline { color: #555; font-style: italic; }
+    .tagline { color: #444; font-style: italic; margin-bottom: 1rem; }
 
-    /* Colorful Boxes Section */
+    /* Inspiration Boxes */
+    #inspiration {
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      color: #333;
+    }
     .boxes-container {
       display: flex;
       flex-wrap: wrap;
@@ -76,19 +91,23 @@
       border-radius: 16px;
       color: #333;
       text-align: center;
+      background: white;
       box-shadow: 0 6px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .box h3 {
-      margin-bottom: 0.7rem;
-      font-size: 1.3rem;
     }
     .box:hover {
       transform: translateY(-6px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
+    .box h3 {
+      margin-bottom: 0.7rem;
+      font-size: 1.3rem;
+    }
 
     /* Skills */
+    #skills {
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    }
     .skills-container {
       display: flex;
       flex-wrap: wrap;
@@ -115,6 +134,9 @@
     .skill-card h3 { margin-bottom: 0.5rem; color: #1c3a78; }
 
     /* Contact */
+    #contact {
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    }
     .contact-container {
       display: flex;
       flex-wrap: wrap;
@@ -140,18 +162,17 @@
 
     /* Footer */
     footer {
-      background: #0f1b2a;
+      background: linear-gradient(90deg, #0f1b2a, #1c3a78);
       color: #ddd;
       text-align: center;
       padding: 20px;
-      margin-top: 60px;
+      margin-top: 0;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
       .about { flex-direction: column; text-align: center; }
-      .skills-container { gap: 1rem; }
-      .boxes-container { gap: 1rem; }
+      .skills-container, .boxes-container { gap: 1rem; }
     }
   </style>
 </head>
@@ -172,20 +193,20 @@
   <main id="home" class="slider">
     <div class="slide slide1 active">
       <div class="content">
-        <h2>You matter. I’m Somali Mainali, a mental health advocate.</h2>
-        <p>Providing compassionate support and mental health awareness to help communities thrive.</p>
+        <h2>Empowering Minds, Inspiring Change</h2>
+        <p>I'm Somali Mainali — a mental health advocate, college lecturer, and public speaker dedicated to emotional wellness and education.</p>
       </div>
     </div>
     <div class="slide slide2">
       <div class="content">
-        <h2>Reducing stigma. Building resilience.</h2>
-        <p>Empathy and education for emotional well-being across all communities.</p>
+        <h2>Breaking Stigma. Building Strength.</h2>
+        <p>Encouraging awareness, compassion, and courage to talk about mental health openly and fearlessly.</p>
       </div>
     </div>
     <div class="slide slide3">
       <div class="content">
-        <h2>Together we can navigate challenges with hope.</h2>
-        <p>Guiding people toward healing and empowerment through shared understanding.</p>
+        <h2>Mother. Dreamer. Educator. Advocate.</h2>
+        <p>Inspiring individuals to heal, learn, and grow into their fullest potential — with empathy and purpose.</p>
       </div>
     </div>
   </main>
@@ -196,34 +217,33 @@
     <div class="about">
       <img src="https://jigyasalabs.com/storage/media/8lvX5gFu0G1vDLRDGpH02pjOZPiPUDtFe9mZkMDw.jpg" alt="Somali Mainali" />
       <div class="about-text">
-        <p class="tagline">I am dedicated to promoting mental health awareness, emotional well-being, and inclusive support for all.</p>
-        <p><strong>Name:</strong> Somali Mainali</p>
-        <p><strong>Phone:</strong> 9876543210</p>
-        <p><strong>Address:</strong> Kankai - 8, Jhapa, Nepal</p>
-        <p>As a passionate counselor and mental health advocate, I help individuals overcome challenges with empathy, awareness, and action.</p>
+        <p class="tagline">“Mental health is not a weakness — it’s the strength to face ourselves with honesty and care.”</p>
+        <p><strong>Somali Mainali</strong> is a passionate <strong>mental health advocate</strong>, <strong>college lecturer</strong>, <strong>public speaker</strong>, and <strong>mother</strong> from Jhapa, Nepal. She empowers individuals through education, awareness, and emotional support.</p>
+        <p>Known for her compassionate approach, Somali leads workshops, lectures, and community programs that promote mindfulness, empathy, and resilience. As a <strong>dreamer</strong>, she envisions a society where every person can speak about their emotions without fear or judgment.</p>
+        <p><strong>Phone:</strong> 9876543210<br><strong>Address:</strong> Kankai - 8, Jhapa, Nepal</p>
       </div>
     </div>
   </section>
 
-  <!-- Colorful Boxes Section -->
+  <!-- Inspiration -->
   <section id="inspiration">
     <h2 class="section-title">Inspiration & Advocacy</h2>
     <div class="boxes-container">
       <div class="box" style="background: linear-gradient(135deg, #ff9a9e, #fad0c4);">
         <h3>💖 Self-Love</h3>
-        <p>Embrace yourself with kindness. Healing starts with compassion for your own heart.</p>
+        <p>Embrace your imperfections — they’re the most human parts of you.</p>
       </div>
       <div class="box" style="background: linear-gradient(135deg, #a1c4fd, #c2e9fb);">
         <h3>🌈 Hope</h3>
-        <p>Even in darkness, hope is the light that leads you toward better days.</p>
+        <p>Every sunrise brings a new chance to heal and start again.</p>
       </div>
       <div class="box" style="background: linear-gradient(135deg, #fbc2eb, #a6c1ee);">
         <h3>🕊️ Peace</h3>
-        <p>Find calm in the chaos. Mental clarity blooms through mindfulness and balance.</p>
+        <p>Peace begins when we listen — to ourselves and to each other.</p>
       </div>
       <div class="box" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);">
         <h3>🌻 Growth</h3>
-        <p>Every challenge is a seed of growth. Nourish it with patience and positivity.</p>
+        <p>Growth takes courage — it’s the journey from pain to purpose.</p>
       </div>
     </div>
   </section>
@@ -235,22 +255,22 @@
       <div class="skill-card">
         <i>🧠</i>
         <h3>Counseling & Support</h3>
-        <p>Emotional guidance, stress management, and resilience-building.</p>
+        <p>Providing guidance and compassion for emotional resilience.</p>
       </div>
       <div class="skill-card">
         <i>🎤</i>
         <h3>Public Speaking</h3>
-        <p>Workshops and seminars to raise mental health awareness.</p>
+        <p>Inspiring audiences through awareness talks and motivational sessions.</p>
       </div>
       <div class="skill-card">
         <i>🤝</i>
         <h3>Crisis Intervention</h3>
-        <p>Providing timely and empathetic crisis support for individuals in need.</p>
+        <p>Offering empathetic support and practical help during difficult times.</p>
       </div>
       <div class="skill-card">
         <i>📚</i>
         <h3>Education & Training</h3>
-        <p>Developing programs for youth and community mental well-being.</p>
+        <p>Designing programs that teach mental wellness and empathy in classrooms.</p>
       </div>
     </div>
   </section>
@@ -267,11 +287,11 @@
       <div class="contact-form">
         <form>
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" required placeholder="Your name" />
+          <input type="text" id="name" required placeholder="Your name" />
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          <input type="email" id="email" required placeholder="you@example.com" />
           <label for="message">Message</label>
-          <textarea id="message" name="message" required placeholder="Write your message..."></textarea>
+          <textarea id="message" required placeholder="Write your message..."></textarea>
           <button type="submit" class="btn">Send Message</button>
         </form>
       </div>
@@ -283,7 +303,7 @@
   </footer>
 
   <script>
-    // Slider auto change
+    // Simple auto-slider
     (function() {
       const slides = document.querySelectorAll('.slide');
       let i = 0;
@@ -294,5 +314,6 @@
       }, 5000);
     })();
   </script>
+
 </body>
 </html>
