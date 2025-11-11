@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Somali Mainali - Mental Health Advocate & Lecturer</title>
   <style>
-    /* Reset & Base */
+    /* Reset */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Poppins', system-ui, Arial, sans-serif;
+      background-color: #f7f7f7;
       color: #333;
-      line-height: 1.7;
-      scroll-behavior: smooth;
+      line-height: 1.6;
     }
 
     a { text-decoration: none; color: inherit; }
@@ -20,11 +20,11 @@
     /* Header */
     header {
       position: sticky; top: 0; z-index: 100;
-      background: linear-gradient(90deg, #0f1b2a, #1c3a78);
+      background-color: #0f1b2a;
       color: white;
       display: flex; justify-content: space-between; align-items: center;
       padding: 14px 28px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
     .brand { font-weight: 600; font-size: 1.3rem; }
     nav a {
@@ -34,34 +34,20 @@
     nav a:hover { color: #4ca1af; }
 
     /* Slider */
-    .slider { position: relative; height: 420px; overflow: hidden; }
+    .slider { position: relative; height: 420px; overflow: hidden; background: #ccc; }
     .slide { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; text-align: center; color: #fff; padding: 20px; }
     .slide.active { display: flex; }
-    .slide .content { max-width: 720px; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 12px; }
+    .slide .content { max-width: 720px; background: rgba(0,0,0,0.35); padding: 20px; border-radius: 12px; }
     .slide1 { background: linear-gradient(135deg, #2c3e50, #4ca1af); }
     .slide2 { background: linear-gradient(135deg, #6a11cb, #2575fc); }
     .slide3 { background: linear-gradient(135deg, #0f9b0f, #2dca9b); }
     .slide h2 { margin-bottom: 8px; font-size: 2.2rem; }
 
-    /* Section General */
-    section {
-      width: min(1100px, 90%);
-      margin: 0 auto;
-      padding: 60px 0;
-      border-radius: 16px;
-    }
-    h2.section-title {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 24px;
-      color: #0e2a47;
-    }
+    /* Sections */
+    section { width: min(1100px, 90%); margin: 60px auto; }
+    h2.section-title { text-align: center; font-size: 2rem; margin-bottom: 24px; color: #0e2a47; }
 
-    /* About Section */
-    #about {
-      background: linear-gradient(135deg, #fdfbfb, #ebedee);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
+    /* About */
     .about { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; }
     .about img {
       width: 280px; height: 280px;
@@ -69,15 +55,11 @@
       object-fit: cover;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
-    .about-text { flex: 1; }
+    .about-text { flex: 1; font-size: 1rem; line-height: 1.7; }
     .about-text p { margin-bottom: 0.8rem; }
-    .tagline { color: #444; font-style: italic; margin-bottom: 1rem; }
+    .tagline { color: #555; font-style: italic; margin-bottom: 1rem; }
 
-    /* Inspiration Boxes */
-    #inspiration {
-      background: linear-gradient(135deg, #fceabb, #f8b500);
-      color: #333;
-    }
+    /* Colorful Boxes */
     .boxes-container {
       display: flex;
       flex-wrap: wrap;
@@ -91,7 +73,6 @@
       border-radius: 16px;
       color: #333;
       text-align: center;
-      background: white;
       box-shadow: 0 6px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
     }
@@ -105,9 +86,6 @@
     }
 
     /* Skills */
-    #skills {
-      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-    }
     .skills-container {
       display: flex;
       flex-wrap: wrap;
@@ -134,9 +112,6 @@
     .skill-card h3 { margin-bottom: 0.5rem; color: #1c3a78; }
 
     /* Contact */
-    #contact {
-      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
-    }
     .contact-container {
       display: flex;
       flex-wrap: wrap;
@@ -162,11 +137,11 @@
 
     /* Footer */
     footer {
-      background: linear-gradient(90deg, #0f1b2a, #1c3a78);
+      background: #0f1b2a;
       color: #ddd;
       text-align: center;
       padding: 20px;
-      margin-top: 0;
+      margin-top: 60px;
     }
 
     /* Responsive */
@@ -217,9 +192,9 @@
     <div class="about">
       <img src="https://jigyasalabs.com/storage/media/8lvX5gFu0G1vDLRDGpH02pjOZPiPUDtFe9mZkMDw.jpg" alt="Somali Mainali" />
       <div class="about-text">
-        <p class="tagline">“Mental health is not a weakness — it’s the strength to face ourselves with honesty and care.”</p>
-        <p><strong>Somali Mainali</strong> is a passionate <strong>mental health advocate</strong>, <strong>college lecturer</strong>, <strong>public speaker</strong>, and <strong>mother</strong> from Jhapa, Nepal. She empowers individuals through education, awareness, and emotional support.</p>
-        <p>Known for her compassionate approach, Somali leads workshops, lectures, and community programs that promote mindfulness, empathy, and resilience. As a <strong>dreamer</strong>, she envisions a society where every person can speak about their emotions without fear or judgment.</p>
+        <p class="tagline">“I believe mental wellness is not a luxury — it’s a necessity for a balanced, meaningful life.”</p>
+        <p><strong>Somali Mainali</strong> is a passionate <strong>mental health advocate</strong>, <strong>college lecturer</strong>, and <strong>public speaker</strong> based in Jhapa, Nepal. With years of experience guiding youth and communities, she blends education and empathy to promote emotional awareness and self-growth.</p>
+        <p>As a <strong>mother</strong> and <strong>dreamer</strong>, Somali’s mission is to inspire others to break barriers, seek help, and nurture a healthy state of mind. She actively engages in workshops, counseling programs, and awareness initiatives focused on personal development, resilience, and kindness.</p>
         <p><strong>Phone:</strong> 9876543210<br><strong>Address:</strong> Kankai - 8, Jhapa, Nepal</p>
       </div>
     </div>
